@@ -4,11 +4,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.linha-reta {
-    width: 100%; /* Largura da linha */
-    height: 2px; /* Altura da linha */
-    background-color: #000000; /* Cor da linha */
-    margin-top: 20px;
-    margin-bottom: 10px;
-}

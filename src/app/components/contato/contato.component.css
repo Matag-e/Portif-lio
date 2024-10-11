@@ -1,0 +1,73 @@
+.contato-section {
+    padding: 50px 0;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    text-align: center;
+}
+
+.contato-container {
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px;
+}
+
+.contato-section h2 {
+    font-size: 2.5em; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #fff; /* Cor do título */
+    text-transform: uppercase; /* Texto em maiúsculas */
+}
+
+.contato-section .contato-descricao {
+    margin-bottom: 40px; /* Espaçamento abaixo da descrição */
+    font-size: 1.2em; /* Tamanho da descrição */
+}
+
+.contato-grid {
+    display: grid; /* Grid para layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.contato-card {
+    background-color: #333; /* Fundo escuro para os cards */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.contato-link {
+    color: #fff; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado */
+    display: block; /* Faz o link ocupar todo o card */
+    height: 100%; /* Altura total do card */
+    text-align: center; /* Centraliza o texto */
+}
+
+.contato-card h3 {
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.contato-card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra mais forte ao passar o mouse */
+}
+
+.contato-link:hover {
+    color: #cecece; /* Cor diferente ao passar o mouse */
+}
+
+.contato-link::after {
+    content: '';
+    display: block;
+    margin: 10px auto 0; /* Margem para o botão */
+    width: 60%; /* Largura do botão */
+    height: 2px; /* Altura do botão */
+    background: #fff; /* Cor do botão */
+    transition: width 0.3s ease; /* Efeito de transição */
+}
+
+.contato-card:hover .contato-link::after {
+    width: 100%; /* Aumenta a largura do botão ao passar o mouse */
+}

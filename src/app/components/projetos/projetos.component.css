@@ -1,65 +1,96 @@
-#projetos {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-    text-align: center;
+.projetos-section {
+    background-color: #000; /* Fundo preto para a seção */
+    color: #fff; /* Texto branco */
+    padding: 50px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
 }
 
-#projetos h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #333;
+.projetos-container {
+    max-width: 1200px; /* Largura máxima da seção */
+    margin: auto; /* Centraliza a seção na página */
+}
+
+.projetos-title {
+    font-size: 2.5rem; /* Tamanho maior para o título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Letras maiúsculas para o título */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    position: relative; /* Para efeitos de decoração */
+}
+
+.projetos-title::after {
+    content: ''; /* Cria um pseudo-elemento para decoração */
+    display: block;
+    height: 4px; /* Altura da linha */
+    width: 60px; /* Largura da linha */
+    background: #fff; /* Cor da linha */
+    margin: 10px auto; /* Centraliza a linha */
 }
 
 .projetos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid; /* Usando grid para layout responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os cards */
 }
 
 .projeto-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #111; /* Fundo muito escuro para os cards */
+    border: 2px solid #fff; /* Borda branca ao redor do card */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para esconder partes que extrapolam os limites do card */
+    transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição suave */
+    padding: 20px; /* Espaçamento interno do card */
 }
 
-.projeto-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.projeto-img {
+    position: relative; /* Para controle do posicionamento da imagem */
+    overflow: hidden; /* Esconde partes que saem do card */
+    height: 200px; /* Altura fixa para as imagens */
 }
 
 .projeto-img img {
-    width: 100%;
-    border-radius: 8px;
-   
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: 100%; /* Imagem ocupa toda a altura do card */
+    object-fit: cover; /* Cobre o card sem distorcer a imagem */
+    transition: transform 0.3s; /* Transição suave para a imagem */
 }
 
-.projeto-item h3 {
-    font-size: 1.5em;
-    color: #222;
-    margin-bottom: 10px;
+.projeto-item:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Aumenta a sombra ao passar o mouse */
 }
 
-.projeto-item p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
+.projeto-item:hover .projeto-img img {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+h3 {
+    margin: 15px 0; /* Espaçamento em cima e embaixo do título */
+    font-size: 1.5rem; /* Tamanho do texto do título */
+    font-weight: bold; /* Negrito para o título */
+    color: #fff; /* Cor do texto */
 }
 
 .btn-projeto {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    display: inline-block; /* Botão como um bloco inline */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    margin: 10px 0; /* Margem acima e abaixo do botão */
+    background-color: #fff; /* Fundo branco do botão */
+    color: #000; /* Texto preto no botão */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas do botão */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Efeito de transição suave */
+    font-weight: bold; /* Texto em negrito */
 }
 
 .btn-projeto:hover {
-    background-color: #0056b3;
+    background-color: #000; /* Fundo preto ao passar o mouse */
+    color: #fff; /* Texto branco ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima ao passar o mouse */
+}
+
+.projeto-description {
+    margin: 10px 0; /* Margem na descrição */
+    font-size: 0.9rem; /* Tamanho menor para a descrição */
+    color: #ddd; /* Cor da descrição */
 }

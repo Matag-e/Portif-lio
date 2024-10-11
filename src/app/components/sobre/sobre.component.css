@@ -1,35 +1,36 @@
-.sobre-box {
-    background-color: #fff;
-    padding: 40px;
-    margin: 0 auto;
-    max-width: 1550px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.05);
-    font-size: 1.2em;
-    line-height: 1.8;
-    color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.sobre-section {
+    display: flex; /* Flexbox para centralizar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Cor do texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
 }
 
-.sobre-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+.sobre-container {
+    max-width: 600px; /* Largura máxima do conteúdo */
+    padding: 40px; /* Espaçamento interno */
+    border: 2px solid #fff; /* Borda branca */
+    border-radius: 15px; /* Cantos arredondados */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto levemente transparente */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* Sombra suave para destaque */
 }
 
-#sobre h2 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2em;
-    margin-bottom: 25px;
-    color: #222;
+.sobre-section h1 {
+    font-size: 3em; /* Tamanho do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    font-weight: bold; /* Texto em negrito */
 }
 
-.sobre-box p {
-    margin-bottom: 20px;
-    color: #555;
+.sobre-section .cargo {
+    font-size: 1.5em; /* Tamanho do texto do cargo */
+    margin-bottom: 10px; /* Espaçamento abaixo do cargo */
 }
 
-.sobre-box p strong {
-    color: #000;
+.sobre-section .frase-inspiradora {
+    font-size: 1.2em; /* Tamanho do texto da frase inspiradora */
+    font-style: italic; /* Texto em itálico */
+    color: #ccc; /* Cor cinza claro para a frase */
 }

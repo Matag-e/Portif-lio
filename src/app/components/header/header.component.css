@@ -1,59 +1,93 @@
-*{
-    font-weight: 900;
-}
-
-nav {
-    background-color: black;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
+    color: white;
+    width: 100%;
+    box-sizing: border-box; /* Isso garante que o padding não adicione largura extra */
+    overflow: hidden; /* Garante que nenhum item saia da tela */
+  }
+  
+  .nav-left {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    padding: 10px 20px; 
-}
-
-.nav-left {
-    display: flex;
-    align-items: center; 
-    gap: 8px;
-    font-size: 20px;
-}
-
-
-.navbar-brand {
+  }
+  
+  .navbar-brand a {
     font-size: 1.5em;
-    color: #ffffff; 
-    margin-right: 10px; 
-
-}
-
-.navbar-brand a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.navbar-brand a:hover{
-    color: #f0f0f0;
-}
-
-.icon {
-    width: 24px; /* Tamanho do ícone */
-    height: 24px; /* Tamanho do ícone */
     color: white;
-}
-
-
-.nav-right {
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .nav-right {
     display: flex;
-    gap: 20px; /* Espaço entre os links */
+    gap: 20px;
   }
   
   .nav-link {
-    text-decoration: none; /* Remove o sublinhado */
-    color: #ffffff; /* Cor do texto */
-    transition: color 0.3s; /* Efeito de transição */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
   }
   
-  .nav-link:hover {
-    color: #8b8b8b; /* Cor ao passar o mouse */
-    border-bottom: 1px solid rgb(136, 136, 136);
+  .nav-toggle {
+    display: none;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    transition: all 0.3s;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    left: 0;
+  }
+  
+  .hamburger::before {
+    top: -8px;
+  }
+  
+  .hamburger::after {
+    bottom: -8px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .nav-right {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background-color: #111;
+      padding: 20px;
+      width: 200px;
+    }
+  
+    .nav-right.active {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .nav-link {
+      padding: 10px 0;
+    }
   }
   

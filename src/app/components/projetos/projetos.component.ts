@@ -46,14 +46,14 @@ export class ProjetosComponent {
         },
         {
             titulo: 'Quiz React',
-            descricao: 'Aplicativo de perguntas e respostas interativo, desenvolvido com React. Permite aos usuários responderem perguntas de múltipla escolha, com feedback instantâneo e pontuação ao final.',
+            descricao: 'Aplicativo de perguntas e respostas interativo, desenvolvido com React. Permite que os usuários responderem perguntas de múltipla escolha, com feedback instantâneo e pontuação ao final.',
             imagem: 'quiz.png',
             link: 'https://github.com/Matag-e/quizreact'
         },
         {
             titulo: 'rpaIngressos',
             descricao: 'Automação simples para compra de ingressos, desenvolvida para facilitar o processo de aquisição de bilhetes.',
-            imagem: 'image.png',
+            imagem: 'rpa.png',
             link: 'https://github.com/Matag-e/rpaIngressos'
         },
         {
@@ -72,7 +72,13 @@ export class ProjetosComponent {
             titulo: 'ACCOUNTS',
             descricao: 'Projeto simples de Node.js simulando um caixa eletrônico, utilizando as bibliotecas Inquirer e Chalk.',
             imagem: 'accounts.png',
-            link: 'https://github.com/Matag-e/ACCOUNTS_NODE'
+            link: 'https://github.com/Matag-e/ACCOUNTS'
+        },
+        {
+            titulo: 'HttpReact',
+            descricao: 'Projeto simples que utiliza o hook useFetch do React para buscar dados de uma API.',
+            imagem: 'httpreact.png',
+            link: 'https://github.com/Matag-e/HttpReact'
         }
     ];
 }

@@ -72,7 +72,7 @@ export class ProjetosComponent {
             titulo: 'ACCOUNTS',
             descricao: 'Projeto simples de Node.js simulando um caixa eletrônico, utilizando as bibliotecas Inquirer e Chalk.',
             imagem: 'accounts.png',
-            link: 'https://github.com/Matag-e/ACCOUNTS'
+            link: 'https://github.com/Matag-e/ACCOUNTS_NODE'
         }
     ];
 }

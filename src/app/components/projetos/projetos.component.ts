@@ -53,7 +53,7 @@ export class ProjetosComponent {
         {
             titulo: 'rpaIngressos',
             descricao: 'Automação simples para compra de ingressos, desenvolvida para facilitar o processo de aquisição de bilhetes.',
-            imagem: 'rpa.png',
+            imagem: 'image.png',
             link: 'https://github.com/Matag-e/rpaIngressos'
         },
         {

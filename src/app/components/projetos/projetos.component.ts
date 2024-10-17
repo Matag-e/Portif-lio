@@ -76,7 +76,7 @@ export class ProjetosComponent {
         },
         {
             titulo: 'HttpReact',
-            descricao: 'Projeto simples que utiliza o hook useFetch do React para buscar dados de uma API.',
+            descricao: 'Projeto simples que utiliza o hook useFetch do React para adicionar "itens" na pagina como se fosse um estoque.',
             imagem: 'httpreact.png',
             link: 'https://github.com/Matag-e/HttpReact'
         }

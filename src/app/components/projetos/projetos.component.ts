@@ -30,7 +30,7 @@ export class ProjetosComponent {
             titulo: 'DeltaService',
             descricao: 'Site de uma loja, desenvolvido com HTML, CSS, JavaScript, Angular, TypeScript e Express. Oferece uma experiência de compra intuitiva e eficiente.',
             imagem: 'delta.png',
-            link: 'https://github.com/Matag-e/Delta'
+            link: 'https://github.com/projetosUninove/delta'
         },
         {
             titulo: 'Movies Lib',

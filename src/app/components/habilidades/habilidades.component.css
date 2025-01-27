@@ -1,8 +1,10 @@
+/* Estilo da seção de habilidades */
 .habilidades-section {
     padding: 50px 0;
     background-color: #111; /* Fundo preto */
     color: #fff; /* Texto branco */
     text-align: center;
+    position: relative;
 }
 
 .habilidades-container {
@@ -11,69 +13,108 @@
     padding: 20px;
 }
 
+/* Título da seção */
 .habilidades-section h2 {
-    font-size: 2.5em; /* Tamanho do título */
+    font-size: 2.8em; /* Tamanho maior para o título */
     margin-bottom: 40px; /* Espaçamento abaixo do título */
     color: #fff; /* Cor do título */
     text-transform: uppercase; /* Texto em maiúsculas */
     position: relative;
+    font-family: 'Roboto', sans-serif; /* Fonte mais criativa */
 }
 
+/* Efeito de underline animado */
 .habilidades-section h2::after {
     content: '';
     display: block;
     height: 4px;
-    width: 60px; /* Largura do underline */
-    background: #fff; /* Cor do underline */
+    width: 100px; /* Largura maior do underline */
+    background: #888; /* Cor cinza para o efeito */
     margin: 20px auto 0; /* Margem para centralizar */
+    transition: width 0.3s ease; /* Transição suave */
 }
 
+.habilidades-section h2:hover::after {
+    width: 160px; /* Alonga o underline no hover */
+}
+
+/* Layout das habilidades */
 .habilidades-grid {
-    display: grid; /* Grid para layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
-    gap: 30px; /* Espaçamento entre os itens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px;
+    padding: 10px;
 }
 
+/* Cartão de habilidade */
 .habilidade-card {
-    background-color: #fff; /* Fundo branco */
-    color: #111; /* Texto escuro */
-    border-radius: 8px; /* Cantos arredondados */
-    padding: 20px; /* Espaçamento interno */
-    position: relative; /* Para o efeito de fundo */
-    overflow: hidden; /* Para evitar overflow do conteúdo */
-    transition: box-shadow 0.3s ease; /* Efeito de transição */
-    border: 1px solid #ccc; /* Bordas suaves */
+    background-color: #222; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 30px; /* Mais espaçamento interno */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+    transition: transform 0.3s, box-shadow 0.3s ease; /* Efeito de transição */
+    border: 1px solid #444; /* Borda suave cinza */
 }
 
 .habilidade-card:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-8px); /* Elevação ao passar o mouse */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
 }
 
+/* Título das habilidades */
 .habilidade-card h3 {
-    font-size: 1.8em; /* Tamanho do subtítulo */
-    margin-bottom: 20px; /* Espaçamento abaixo do subtítulo */
-    color: #111; /* Cor do subtítulo */
-    text-transform: uppercase; /* Texto em maiúsculas */
+    font-size: 2em; /* Tamanho do subtítulo */
+    margin-bottom: 20px;
+    color: #ccc; /* Cor cinza para o título */
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
+/* Lista de habilidades */
 .skills-list {
     display: flex;
-    flex-wrap: wrap; /* Permite que as habilidades se movam para a linha seguinte */
-    justify-content: center; /* Centraliza os itens */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skill-item {
-    background: #111; /* Fundo escuro */
+    background: #444444; /* Fundo cinza escuro */
     color: #fff; /* Texto branco */
-    border-radius: 20px; /* Bordas arredondadas */
-    padding: 10px 20px; /* Espaçamento interno */
-    margin: 5px; /* Margem entre os itens */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
-    font-weight: bold; /* Destaca o texto */
+    border-radius: 20px;
+    padding: 12px 24px;
+    margin: 8px; /* Margem entre os itens */
+    font-weight: 500;
+    font-size: 1.2em;
+    transition: background 0.3s, transform 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .skill-item:hover {
-    background: #fff; /* Fundo fica branco ao passar o mouse */
-    color: #111; /* Texto fica escuro */
-    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+    background: #888; /* Fundo cinza claro no hover */
+    color: #111; /* Texto escuro */
+    transform: scale(1.1); /* Aumento suave do item */
+}
+
+.skill-item:active {
+    transform: scale(1); /* Retorna ao tamanho original ao clicar */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .habilidades-section h2 {
+        font-size: 2.2em;
+    }
+
+    .habilidade-card {
+        padding: 20px;
+    }
+
+    .skills-list {
+        flex-direction: column;
+    }
 }

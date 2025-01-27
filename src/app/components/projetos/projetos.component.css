@@ -1,96 +1,140 @@
+/* Estilos principais da seção de Projetos */
 .projetos-section {
-    background-color: #000; /* Fundo preto para a seção */
-    color: #fff; /* Texto branco */
-    padding: 50px 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    background-color: #111; /* Fundo escuro, quase preto */
+    color: #fff; /* Texto em branco */
+    padding: 80px 20px; /* Espaçamento generoso */
+    text-align: center;
+    position: relative;
+    font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
+    overflow: hidden;
 }
 
+/* Container que centraliza os projetos */
 .projetos-container {
-    max-width: 1200px; /* Largura máxima da seção */
-    margin: auto; /* Centraliza a seção na página */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Título da seção de Projetos */
 .projetos-title {
-    font-size: 2.5rem; /* Tamanho maior para o título */
-    margin-bottom: 40px; /* Espaço abaixo do título */
-    text-transform: uppercase; /* Letras maiúsculas para o título */
-    letter-spacing: 2px; /* Espaçamento entre letras */
-    position: relative; /* Para efeitos de decoração */
+    font-size: 3.5rem; /* Tamanho grande e impactante */
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ccc; /* Cor de texto cinza claro */
+    position: relative;
 }
 
+/* Linha decorativa abaixo do título */
 .projetos-title::after {
-    content: ''; /* Cria um pseudo-elemento para decoração */
+    content: '';
     display: block;
-    height: 4px; /* Altura da linha */
-    width: 60px; /* Largura da linha */
-    background: #fff; /* Cor da linha */
-    margin: 10px auto; /* Centraliza a linha */
+    height: 2px;
+    width: 80px;
+    background: #4f4f4f; /* Tom de cinza mais escuro para a linha */
+    margin: 15px auto;
 }
 
+/* Layout Grid para os cards de projeto */
 .projetos-grid {
-    display: grid; /* Usando grid para layout responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Layout responsivo */
     gap: 30px; /* Espaçamento entre os cards */
+    padding: 0 10px;
 }
 
+/* Card de cada projeto */
 .projeto-item {
-    background-color: #111; /* Fundo muito escuro para os cards */
-    border: 2px solid #fff; /* Borda branca ao redor do card */
+    background-color: #222; /* Fundo escuro, mas não preto puro */
     border-radius: 10px; /* Bordas arredondadas */
-    overflow: hidden; /* Para esconder partes que extrapolam os limites do card */
-    transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição suave */
-    padding: 20px; /* Espaçamento interno do card */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px 20px;
+    cursor: pointer;
+    position: relative;
 }
 
-.projeto-img {
-    position: relative; /* Para controle do posicionamento da imagem */
-    overflow: hidden; /* Esconde partes que saem do card */
-    height: 200px; /* Altura fixa para as imagens */
-}
-
-.projeto-img img {
-    width: 100%; /* Imagem ocupa toda a largura do card */
-    height: 100%; /* Imagem ocupa toda a altura do card */
-    object-fit: cover; /* Cobre o card sem distorcer a imagem */
-    transition: transform 0.3s; /* Transição suave para a imagem */
-}
-
+/* Efeito de hover para aumentar o card */
 .projeto-item:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Aumenta a sombra ao passar o mouse */
+    transform: translateY(-10px); /* Leve movimento para cima */
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15); /* Aumento da sombra ao passar o mouse */
 }
 
+/* Imagem do projeto */
+.projeto-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilo da imagem dentro do card */
+.projeto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de hover para a imagem */
 .projeto-item:hover .projeto-img img {
-    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+    transform: scale(1.05); /* Aumenta suavemente a imagem ao passar o mouse */
 }
 
+/* Título do projeto */
 h3 {
-    margin: 15px 0; /* Espaçamento em cima e embaixo do título */
-    font-size: 1.5rem; /* Tamanho do texto do título */
-    font-weight: bold; /* Negrito para o título */
-    color: #fff; /* Cor do texto */
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff; /* Cor do título em branco */
+    margin: 15px 0;
 }
 
-.btn-projeto {
-    display: inline-block; /* Botão como um bloco inline */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    margin: 10px 0; /* Margem acima e abaixo do botão */
-    background-color: #fff; /* Fundo branco do botão */
-    color: #000; /* Texto preto no botão */
-    text-decoration: none; /* Remove o sublinhado */
-    border-radius: 5px; /* Bordas arredondadas do botão */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Efeito de transição suave */
-    font-weight: bold; /* Texto em negrito */
-}
-
-.btn-projeto:hover {
-    background-color: #000; /* Fundo preto ao passar o mouse */
-    color: #fff; /* Texto branco ao passar o mouse */
-    transform: translateY(-2px); /* Leve movimento para cima ao passar o mouse */
-}
-
+/* Descrição do projeto */
 .projeto-description {
-    margin: 10px 0; /* Margem na descrição */
-    font-size: 0.9rem; /* Tamanho menor para a descrição */
-    color: #ddd; /* Cor da descrição */
+    font-size: 1rem;
+    color: #ddd; /* Cor mais clara para a descrição */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Botões de ação */
+.projeto-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Botão do projeto */
+.btn-projeto {
+    background-color: #4f4f4f; /* Cor de fundo cinza escuro */
+    color: #fff; /* Texto em branco */
+    padding: 12px 25px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover para os botões */
+.btn-projeto:hover {
+    background-color: #333; /* Cor mais escura ao passar o mouse */
+    color: #fff; /* Mantém o texto branco */
+    transform: translateY(-3px);
+}
+
+/* Respostas responsivas */
+@media (max-width: 768px) {
+    .projetos-title {
+        font-size: 2.5rem; /* Tamanho do título reduzido para telas menores */
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .projeto-item {
+        padding: 20px; /* Reduz o padding em telas menores */
+    }
 }

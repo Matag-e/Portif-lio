@@ -69,16 +69,16 @@ export class ProjetosComponent {
             link: 'https://github.com/Matag-e/secretWord'
         },
         {
-            titulo: 'ACCOUNTS',
+            titulo: 'Conta Bancaria',
             descricao: 'Projeto simples de Node.js simulando um caixa eletrônico, utilizando as bibliotecas Inquirer e Chalk.',
             imagem: 'accounts.png',
-            link: 'https://github.com/Matag-e/ACCOUNTS'
+            link: 'https://github.com/Matag-e/ACCOUNTS_NODE'
         },
         {
             titulo: 'HttpReact',
             descricao: 'Projeto simples que utiliza o hook useFetch do React para adicionar "itens" na pagina como se fosse um estoque.',
             imagem: 'httpreact.png',
-            link: 'https://github.com/Matag-e/HttpReact'
+            link: 'https://github.com/Matag-e/api_react'
         }
     ];
 }

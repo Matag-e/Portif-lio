@@ -1,96 +1,143 @@
 .projetos-section {
-    background-color: #000; /* Fundo preto para a seção */
-    color: #fff; /* Texto branco */
-    padding: 50px 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    padding: 100px 5%;
+    background-color: #0f0f0f; /* Ligeiramente mais claro que o fundo principal */
 }
 
-.projetos-container {
-    max-width: 1200px; /* Largura máxima da seção */
-    margin: auto; /* Centraliza a seção na página */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.projetos-title {
-    font-size: 2.5rem; /* Tamanho maior para o título */
-    margin-bottom: 40px; /* Espaço abaixo do título */
-    text-transform: uppercase; /* Letras maiúsculas para o título */
-    letter-spacing: 2px; /* Espaçamento entre letras */
-    position: relative; /* Para efeitos de decoração */
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    position: relative;
 }
 
-.projetos-title::after {
-    content: ''; /* Cria um pseudo-elemento para decoração */
+.section-title::after {
+    content: '';
     display: block;
-    height: 4px; /* Altura da linha */
-    width: 60px; /* Largura da linha */
-    background: #fff; /* Cor da linha */
-    margin: 10px auto; /* Centraliza a linha */
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .projetos-grid {
-    display: grid; /* Usando grid para layout responsivo */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
-    gap: 30px; /* Espaçamento entre os cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.projeto-item {
-    background-color: #111; /* Fundo muito escuro para os cards */
-    border: 2px solid #fff; /* Borda branca ao redor do card */
-    border-radius: 10px; /* Bordas arredondadas */
-    overflow: hidden; /* Para esconder partes que extrapolam os limites do card */
-    transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição suave */
-    padding: 20px; /* Espaçamento interno do card */
+.projeto-card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.projeto-img {
-    position: relative; /* Para controle do posicionamento da imagem */
-    overflow: hidden; /* Esconde partes que saem do card */
-    height: 200px; /* Altura fixa para as imagens */
+.projeto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
 }
 
-.projeto-img img {
-    width: 100%; /* Imagem ocupa toda a largura do card */
-    height: 100%; /* Imagem ocupa toda a altura do card */
-    object-fit: cover; /* Cobre o card sem distorcer a imagem */
-    transition: transform 0.3s; /* Transição suave para a imagem */
+.projeto-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 
-.projeto-item:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Aumenta a sombra ao passar o mouse */
+.projeto-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.projeto-item:hover .projeto-img img {
-    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+.projeto-card:hover .projeto-img-wrapper img {
+    transform: scale(1.1);
 }
 
-h3 {
-    margin: 15px 0; /* Espaçamento em cima e embaixo do título */
-    font-size: 1.5rem; /* Tamanho do texto do título */
-    font-weight: bold; /* Negrito para o título */
-    color: #fff; /* Cor do texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
 }
 
-.btn-projeto {
-    display: inline-block; /* Botão como um bloco inline */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    margin: 10px 0; /* Margem acima e abaixo do botão */
-    background-color: #fff; /* Fundo branco do botão */
-    color: #000; /* Texto preto no botão */
-    text-decoration: none; /* Remove o sublinhado */
-    border-radius: 5px; /* Bordas arredondadas do botão */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Efeito de transição suave */
-    font-weight: bold; /* Texto em negrito */
+.projeto-card:hover .overlay {
+    opacity: 1;
 }
 
-.btn-projeto:hover {
-    background-color: #000; /* Fundo preto ao passar o mouse */
-    color: #fff; /* Texto branco ao passar o mouse */
-    transform: translateY(-2px); /* Leve movimento para cima ao passar o mouse */
+.btn-ver {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateY(20px);
+    transition: all var(--transition-speed);
 }
 
-.projeto-description {
-    margin: 10px 0; /* Margem na descrição */
-    font-size: 0.9rem; /* Tamanho menor para a descrição */
-    color: #ddd; /* Cor da descrição */
+.projeto-card:hover .btn-ver {
+    transform: translateY(0);
+}
+
+.btn-ver:hover {
+    background-color: var(--primary-hover);
+}
+
+.projeto-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.projeto-info p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
 }

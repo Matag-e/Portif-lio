@@ -1,79 +1,108 @@
 .habilidades-section {
-    padding: 50px 0;
-    background-color: #111; /* Fundo preto */
-    color: #fff; /* Texto branco */
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
     text-align: center;
-}
-
-.habilidades-container {
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 20px;
-}
-
-.habilidades-section h2 {
-    font-size: 2.5em; /* Tamanho do título */
-    margin-bottom: 40px; /* Espaçamento abaixo do título */
-    color: #fff; /* Cor do título */
-    text-transform: uppercase; /* Texto em maiúsculas */
+    margin-bottom: 60px;
+    color: var(--text-color);
     position: relative;
 }
 
-.habilidades-section h2::after {
+.section-title::after {
     content: '';
     display: block;
+    width: 60px;
     height: 4px;
-    width: 60px; /* Largura do underline */
-    background: #fff; /* Cor do underline */
-    margin: 20px auto 0; /* Margem para centralizar */
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .habilidades-grid {
-    display: grid; /* Grid para layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
-    gap: 30px; /* Espaçamento entre os itens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .habilidade-card {
-    background-color: #fff; /* Fundo branco */
-    color: #111; /* Texto escuro */
-    border-radius: 8px; /* Cantos arredondados */
-    padding: 20px; /* Espaçamento interno */
-    position: relative; /* Para o efeito de fundo */
-    overflow: hidden; /* Para evitar overflow do conteúdo */
-    transition: box-shadow 0.3s ease; /* Efeito de transição */
-    border: 1px solid #ccc; /* Bordas suaves */
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
 .habilidade-card:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.habilidade-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.habilidade-card:hover::before {
+    opacity: 1;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 .habilidade-card h3 {
-    font-size: 1.8em; /* Tamanho do subtítulo */
-    margin-bottom: 20px; /* Espaçamento abaixo do subtítulo */
-    color: #111; /* Cor do subtítulo */
-    text-transform: uppercase; /* Texto em maiúsculas */
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 0;
 }
 
 .skills-list {
     display: flex;
-    flex-wrap: wrap; /* Permite que as habilidades se movam para a linha seguinte */
-    justify-content: center; /* Centraliza os itens */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .skill-item {
-    background: #111; /* Fundo escuro */
-    color: #fff; /* Texto branco */
-    border-radius: 20px; /* Bordas arredondadas */
-    padding: 10px 20px; /* Espaçamento interno */
-    margin: 5px; /* Margem entre os itens */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
-    font-weight: bold; /* Destaca o texto */
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.habilidade-card:hover .skill-item {
+    background-color: rgba(98, 0, 234, 0.1);
+    color: var(--text-color);
 }
 
 .skill-item:hover {
-    background: #fff; /* Fundo fica branco ao passar o mouse */
-    color: #111; /* Texto fica escuro */
-    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+    background-color: var(--primary-color) !important;
+    color: white !important;
 }

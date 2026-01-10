@@ -1,20 +1,35 @@
 <section id="contato" class="contato-section">
-    <div class="contato-container">
-        <h2>Entre em Contato</h2>
-        <p class="contato-descricao">Conecte-se comigo nas redes sociais:</p>
+    <div class="container">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <p class="contato-descricao">Estou sempre aberto a novas oportunidades e projetos interessantes.</p>
+        
         <div class="contato-grid">
-            <div class="contato-card">
-                <a href="https://www.linkedin.com/in/seu-perfil/" target="_blank" class="contato-link">
-                    <h3>LinkedIn</h3>
-                    <p>Vamos nos conectar!</p>
-                </a>
-            </div>
-            <div class="contato-card">
-                <a href="https://github.com/Matag-E" target="_blank" class="contato-link">
-                    <h3>GitHub</h3>
-                    <p>Confira meus projetos!</p>
-                </a>
-            </div>
+            <a href="https://www.linkedin.com/in/seu-perfil/" target="_blank" class="contato-card linkedin">
+                <div class="icon-wrapper">
+                    <ng-icon name="bootstrapLinkedin"></ng-icon>
+                </div>
+                <h3>LinkedIn</h3>
+                <p>Conecte-se profissionalmente</p>
+                <span class="link-text">Ver Perfil <ng-icon name="bootstrapArrowRight"></ng-icon></span>
+            </a>
+
+            <a href="https://github.com/Matag-E" target="_blank" class="contato-card github">
+                <div class="icon-wrapper">
+                    <ng-icon name="bootstrapGithub"></ng-icon>
+                </div>
+                <h3>GitHub</h3>
+                <p>Explore meus repositórios</p>
+                <span class="link-text">Ver Código <ng-icon name="bootstrapArrowRight"></ng-icon></span>
+            </a>
+
+            <a href="mailto:mateussantos212@gmail.com" class="contato-card email">
+                <div class="icon-wrapper">
+                    <ng-icon name="bootstrapEnvelope"></ng-icon>
+                </div>
+                <h3>E-mail</h3>
+                <p>Mande um "Olá!"</p>
+                <span class="link-text">Enviar E-mail <ng-icon name="bootstrapArrowRight"></ng-icon></span>
+            </a>
         </div>
     </div>
 </section>

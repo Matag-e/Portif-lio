@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class ProjetosComponent {
   projects = [
     {
+      title: 'Community Mapper',
+      description: 'Plataforma de mapeamento colaborativo de problemas urbanos com geolocalização, dashboard administrativo e autenticação.',
+      image: 'community.png',
+      tech: ['FastAPI', 'Python', 'Leaflet', 'MongoDB'],
+      link: 'https://github.com/Matag-e/community-map',
+      github: 'https://github.com/Matag-e/community-map'
+    },
+    {
       title: 'ReactGram',
       description: 'Rede social completa inspirada no Instagram com compartilhamento de fotos, likes e comentários.',
       image: 'reactgram.png',
@@ -88,6 +96,14 @@ export class ProjetosComponent {
       tech: ['Node.js', 'Inquirer', 'Chalk'],
       link: 'https://github.com/Matag-e/ACCOUNTS_NODE',
       github: 'https://github.com/Matag-e/ACCOUNTS_NODE'
+    },
+    {
+      title: 'FastAPI Chat',
+      description: 'Chat em tempo real com ChatBot inteligente (ELIZA), autenticação JWT, WebSockets e MongoDB.',
+      image: 'fastapi-chat.png',
+      tech: ['FastAPI', 'Python', 'MongoDB', 'WebSocket'],
+      link: 'https://github.com/Matag-e/fastapi-chat',
+      github: 'https://github.com/Matag-e/fastapi-chat'
     }
   ];
 }

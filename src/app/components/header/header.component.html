@@ -1,15 +1,20 @@
-<nav class="navbar">
-  <div class="nav-left">
-    <ng-icon name="bootstrapLaptop" class="icon"></ng-icon>
-    <span class="navbar-brand"><a href="#">MATAG</a></span>
-  </div>
-  <div class="nav-toggle" (click)="toggleMenu()">
-    <span class="hamburger"></span>
-  </div>
-  <div class="nav-right" [class.active]="menuOpen">
-    <a href="#sobre" class="nav-link">SOBRE</a>
-    <a href="#habilidades" class="nav-link">HABILIDADES</a>
-    <a href="#projetos" class="nav-link">MEUS PROJETOS</a>
-    <a href="#contato" class="nav-link">CONTATOS</a>
-  </div>
-</nav>
+<header>
+    <div class="container navbar">
+        <a href="#" class="navbar-brand">
+            &lt;Mateus<span>.Dev</span> /&gt;
+        </a>
+        
+        <div class="mobile-toggle" (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="navbar-nav" [class.active]="isMenuOpen">
+            <li><a href="#sobre" class="nav-link" (click)="closeMenu()">Sobre</a></li>
+            <li><a href="#habilidades" class="nav-link" (click)="closeMenu()">Habilidades</a></li>
+            <li><a href="#projetos" class="nav-link" (click)="closeMenu()">Projetos</a></li>
+            <li><a href="#contato" class="nav-link" (click)="closeMenu()">Contato</a></li>
+        </ul>
+    </div>
+</header>

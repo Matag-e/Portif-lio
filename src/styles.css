@@ -1,20 +1,37 @@
 :root {
-  --bg-color: #0a0a0a;
-  --surface-color: #1a1a1a;
-  --primary-color: #6200ea;
-  --primary-hover: #3700b3;
-  --secondary-color: #03dac6;
-  --text-color: #ffffff;
-  --text-secondary: #b3b3b3;
+  /* Paleta de Cores Profissional (Dark Theme) */
+  --bg-color: #0f1115; /* Fundo muito escuro, quase preto, levemente azulado */
+  --surface-color: #1a1d23; /* Superfície para cards */
+  --surface-hover: #242830;
+  
+  --primary-color: #3b82f6; /* Azul moderno (estilo Tailwind blue-500) */
+  --primary-dark: #2563eb;
+  --primary-light: #60a5fa;
+  
+  --secondary-color: #10b981; /* Verde esmeralda para detalhes/sucesso */
+  
+  --text-color: #f3f4f6; /* Branco suave */
+  --text-secondary: #9ca3af; /* Cinza claro */
+  --text-tertiary: #6b7280; /* Cinza mais escuro */
+  
+  --accent-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  
   --font-main: 'Poppins', sans-serif;
+  
   --transition-speed: 0.3s;
-  --border-radius: 12px;
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --border-radius: 8px; /* Bordas levemente arredondadas, mais profissional que 12px */
+  --border-radius-lg: 16px;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+  
+  --container-width: 1200px;
+  --header-height: 80px;
 }
 
 * {
-  font-family: var(--font-main);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,27 +40,117 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
-  font-size: 18px; /* Tamanho base aumentado */
+  font-family: var(--font-main);
+  line-height: 1.7;
+  font-size: 16px; /* Voltando para um tamanho legível padrão, 18px pode ser muito grande para desktop, controlarei via rem */
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
+/* Scrollbar Estilizada */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-color);
-  border-radius: 5px;
+  background: var(--surface-hover);
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
+}
+
+/* Utilitários */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+/* Botões Globais */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+  cursor: pointer;
+  border: none;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }

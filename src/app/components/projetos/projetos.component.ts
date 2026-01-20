@@ -15,6 +15,12 @@ interface Projeto {
 export class ProjetosComponent {
     projetos: Projeto[] = [
         {
+            titulo: 'Roteiro.io',
+            descricao: 'Aplicação web para planejamento de viagens. Permite criar roteiros dia a dia, visualizar trajetos no mapa e controlar gastos. Desenvolvido com MERN Stack e TypeScript.',
+            imagem: 'roteiro.png',
+            link: 'https://github.com/Matag-e/roteiro.io'
+        },
+        {
             titulo: 'Zoosuplementos',
             descricao: 'Site de venda de suplementos desenvolvido com tecnologias de front-end (HTML, CSS, JavaScript, Bootstrap) e back-end (PHP, SQL, AJAX).',
             imagem: 'zoosup.png',

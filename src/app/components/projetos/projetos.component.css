@@ -1,140 +1,141 @@
-/* Estilos principais da seção de Projetos */
-.projetos-section {
-    background-color: #111; /* Fundo escuro, quase preto */
-    color: #fff; /* Texto em branco */
-    padding: 80px 20px; /* Espaçamento generoso */
-    text-align: center;
-    position: relative;
-    font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
-    overflow: hidden;
-}
-
-/* Container que centraliza os projetos */
-.projetos-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Título da seção de Projetos */
-.projetos-title {
-    font-size: 3.5rem; /* Tamanho grande e impactante */
-    margin-bottom: 40px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #ccc; /* Cor de texto cinza claro */
-    position: relative;
-}
-
-/* Linha decorativa abaixo do título */
-.projetos-title::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 80px;
-    background: #4f4f4f; /* Tom de cinza mais escuro para a linha */
-    margin: 15px auto;
-}
-
-/* Layout Grid para os cards de projeto */
-.projetos-grid {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Layout responsivo */
-    gap: 30px; /* Espaçamento entre os cards */
-    padding: 0 10px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
-/* Card de cada projeto */
-.projeto-item {
-    background-color: #222; /* Fundo escuro, mas não preto puro */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 25px 20px;
-    cursor: pointer;
-    position: relative;
-}
-
-/* Efeito de hover para aumentar o card */
-.projeto-item:hover {
-    transform: translateY(-10px); /* Leve movimento para cima */
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15); /* Aumento da sombra ao passar o mouse */
-}
-
-/* Imagem do projeto */
-.projeto-img {
-    position: relative;
-    height: 220px;
+.project-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
     overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
 
-/* Estilo da imagem dentro do card */
-.projeto-img img {
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilo para projetos com fundo simples */
+.simple-background {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .simple-background {
+    transform: scale(1.05);
+}
+
+/* Estilo para projetos com imagem */
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
-/* Efeito de hover para a imagem */
-.projeto-item:hover .projeto-img img {
-    transform: scale(1.05); /* Aumenta suavemente a imagem ao passar o mouse */
+.project-card:hover .image-container img {
+    transform: scale(1.1);
 }
 
-/* Título do projeto */
-h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff; /* Cor do título em branco */
-    margin: 15px 0;
-}
-
-/* Descrição do projeto */
-.projeto-description {
-    font-size: 1rem;
-    color: #ddd; /* Cor mais clara para a descrição */
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Botões de ação */
-.projeto-actions {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
-    gap: 20px;
+    align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* Botão do projeto */
-.btn-projeto {
-    background-color: #4f4f4f; /* Cor de fundo cinza escuro */
-    color: #fff; /* Texto em branco */
-    padding: 12px 25px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+.image-container:hover .overlay {
+    opacity: 1;
 }
 
-/* Efeito de hover para os botões */
-.btn-projeto:hover {
-    background-color: #333; /* Cor mais escura ao passar o mouse */
-    color: #fff; /* Mantém o texto branco */
-    transform: translateY(-3px);
+.project-content {
+    padding: 1.5rem;
 }
 
-/* Respostas responsivas */
-@media (max-width: 768px) {
-    .projetos-title {
-        font-size: 2.5rem; /* Tamanho do título reduzido para telas menores */
-    }
+.project-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
 
-    .projetos-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
+.project-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
 
-    .projeto-item {
-        padding: 20px; /* Reduz o padding em telas menores */
-    }
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface-hover);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
 }

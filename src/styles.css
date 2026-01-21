@@ -37,13 +37,23 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-main);
   line-height: 1.7;
-  font-size: 16px; /* Voltando para um tamanho legível padrão, 18px pode ser muito grande para desktop, controlarei via rem */
+  font-size: 16px;
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 html {

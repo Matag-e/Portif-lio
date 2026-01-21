@@ -16,7 +16,7 @@ export class ProjetosComponent {
     projetos: Projeto[] = [
         {
             titulo: 'Roteiro.io',
-            descricao: 'Aplicação web para planejamento de viagens. Permite criar roteiros dia a dia, visualizar trajetos no mapa e controlar gastos. Desenvolvido com MERN Stack e TypeScript.',
+            descricao: 'Aplicação completa para planejamento de viagens. Inclui roteiros diários, mapa interativo, controle financeiro, checklist de bagagem e exportação em PDF. Desenvolvido com MERN Stack e TypeScript.',
             imagem: 'roteiro.png',
             link: 'https://github.com/Matag-e/roteiro.io'
         },

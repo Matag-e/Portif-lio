@@ -10,7 +10,7 @@ export class ProjetosComponent {
     {
       title: 'Roteiro.io',
       description: 'Aplicação completa para planejamento de viagens. Inclui roteiros diários, mapa interativo, controle financeiro, checklist de bagagem e exportação em PDF. Desenvolvido com MERN Stack e TypeScript.',
-      image: 'roteiro.png',
+      image: 'roteiro-cover.svg',
       tech: ['MERN Stack', 'TypeScript'],
       link: 'https://github.com/Matag-e/roteiro.io',
       github: 'https://github.com/Matag-e/roteiro.io'

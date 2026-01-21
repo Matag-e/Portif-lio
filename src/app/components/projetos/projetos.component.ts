@@ -1,117 +1,84 @@
 import { Component } from '@angular/core';
 
+interface Projeto {
+    titulo: string;
+    descricao: string;
+    imagem: string;
+    link: string;
+}
+
 @Component({
-  selector: 'app-projetos',
-  templateUrl: './projetos.component.html',
-  styleUrl: './projetos.component.css'
+    selector: 'app-projetos',
+    templateUrl: './projetos.component.html',
+    styleUrls: ['./projetos.component.css']
 })
 export class ProjetosComponent {
-  projects = [
-    {
-      title: 'Roteiro.io',
-      description: 'Aplicação completa para planejamento de viagens. Inclui roteiros diários, mapa interativo, controle financeiro, checklist de bagagem e exportação em PDF. Desenvolvido com MERN Stack e TypeScript.',
-      image: 'roteiro-cover.svg',
-      tech: ['MERN Stack', 'TypeScript'],
-      link: 'https://github.com/Matag-e/roteiro.io',
-      github: 'https://github.com/Matag-e/roteiro.io'
-    },
-    {
-      title: 'Community Mapper',
-      description: 'Plataforma de mapeamento colaborativo de problemas urbanos com geolocalização, dashboard administrativo e autenticação.',
-      image: 'community.png',
-      tech: ['FastAPI', 'Python', 'Leaflet', 'MongoDB'],
-      link: 'https://github.com/Matag-e/community-map',
-      github: 'https://github.com/Matag-e/community-map'
-    },
-    {
-      title: 'ReactGram',
-      description: 'Rede social completa inspirada no Instagram com compartilhamento de fotos, likes e comentários.',
-      image: 'reactgram.png',
-      tech: ['React', 'Node.js', 'MongoDB', 'Redux'],
-      link: 'https://react-gram-opal.vercel.app/',
-      github: 'https://github.com/Matag-e/React_Gram'
-    },
-    {
-      title: 'Mini Blog',
-      description: 'Um blog pessoal minimalista para compartilhar artigos e ideias.',
-      image: 'miniblog.png',
-      tech: ['Angular', 'TypeScript'],
-      link: 'https://github.com/Matag-e/MiniBLOG',
-      github: 'https://github.com/Matag-e/MiniBLOG'
-    },
-    {
-      title: 'TMDB Movies',
-      description: 'Catálogo de filmes utilizando a API do The Movie Database (TMDB).',
-      image: 'tmdb.png',
-      tech: ['Angular', 'API REST'],
-      link: 'https://github.com/Matag-e/tmdb_api',
-      github: 'https://github.com/Matag-e/tmdb_api'
-    },
-    {
-      title: 'Gerenciador de Tarefas',
-      description: 'Aplicação To-Do List para organização pessoal e produtividade.',
-      image: 'todo.png',
-      tech: ['TypeScript', 'Local Storage'],
-      link: 'https://github.com/Matag-e/ToDoList_react',
-      github: 'https://github.com/Matag-e/ToDoList_react'
-    },
-    {
-      title: 'Quiz App',
-      description: 'Jogo interativo de perguntas e respostas para testar conhecimentos.',
-      image: 'quiz.png',
-      tech: ['JavaScript', 'CSS'],
-      link: 'https://github.com/Matag-e/quizreact',
-      github: 'https://github.com/Matag-e/quizreact',
-      simpleBackground: true
-    },
-    {
-      title: 'Dashboard Financeiro',
-      description: 'Painel administrativo para visualização de métricas e dados.',
-      image: 'dashboard.png',
-      tech: ['Angular', 'Chart.js'],
-      link: 'https://github.com/Matag-e/responsive_adminDashboard',
-      github: 'https://github.com/Matag-e/responsive_adminDashboard'
-    },
-    {
-      title: 'ZooSup',
-      description: 'Plataforma de gestão para pet shops e clínicas veterinárias.',
-      image: 'zoosup.png',
-      tech: ['Full Stack', 'Node.js'],
-      link: 'https://github.com/Matag-e/ZOOSuplementos',
-      github: 'https://github.com/Matag-e/ZOOSuplementos'
-    },
-    {
-      title: 'Delta System',
-      description: 'Sistema corporativo para gerenciamento de processos internos.',
-      image: 'delta.png',
-      tech: ['Angular', 'Java'],
-      link: 'https://github.com/projetosUninove/delta',
-      github: 'https://github.com/projetosUninove/delta'
-    },
-    {
-      title: 'Secret Word',
-      description: 'Jogo de adivinhação de palavras inspirado em clássicos da TV.',
-      image: 'secret.png',
-      tech: ['React', 'CSS'],
-      link: 'https://github.com/Matag-e/SecretWord',
-      github: 'https://github.com/Matag-e/SecretWord',
-      simpleBackground: true
-    },
-    {
-      title: 'Accounts Node',
-      description: 'Simulador bancário via terminal (CLI) permitindo criar contas, depósitos, saques e consultas.',
-      image: 'accounts.png',
-      tech: ['Node.js', 'Inquirer', 'Chalk'],
-      link: 'https://github.com/Matag-e/ACCOUNTS_NODE',
-      github: 'https://github.com/Matag-e/ACCOUNTS_NODE'
-    },
-    {
-      title: 'FastAPI Chat',
-      description: 'Chat em tempo real com ChatBot inteligente (ELIZA), autenticação JWT, WebSockets e MongoDB.',
-      image: 'fastapi-chat.png',
-      tech: ['FastAPI', 'Python', 'MongoDB', 'WebSocket'],
-      link: 'https://github.com/Matag-e/fastapi-chat',
-      github: 'https://github.com/Matag-e/fastapi-chat'
-    }
-  ];
+    projetos: Projeto[] = [
+        {
+            titulo: 'Zoosuplementos',
+            descricao: 'Site de venda de suplementos desenvolvido com tecnologias de front-end (HTML, CSS, JavaScript, Bootstrap) e back-end (PHP, SQL, AJAX).',
+            imagem: 'zoosup.png',
+            link: 'https://github.com/Matag-e/ZOOSuplementos'
+        },
+        {
+            titulo: 'MINIBLOG',
+            descricao: 'Blog interativo que permite postar fotos com legendas, desenvolvido com React no front-end e Firebase no back-end.',
+            imagem: 'miniblog.png',
+            link: 'https://github.com/Matag-e/MiniBLOG'
+        },
+        {
+            titulo: 'DeltaService',
+            descricao: 'Site de uma loja, desenvolvido com HTML, CSS, JavaScript, Angular, TypeScript e Express. Oferece uma experiência de compra intuitiva e eficiente.',
+            imagem: 'delta.png',
+            link: 'https://github.com/projetosUninove/delta'
+        },
+        {
+            titulo: 'Movies Lib',
+            descricao: 'Site simples que consome a API do TMDB para exibir todos os filmes do banco de dados. Permite busca e filtragem de filmes por categoria.',
+            imagem: 'tmdb.png',
+            link: 'https://github.com/Matag-e/tmdb_api'
+        },
+        {
+            titulo: 'Dashboard Admin',
+            descricao: 'Site simples de dashboard admin, desenvolvido apenas com HTML e CSS.',
+            imagem: 'dashboard.png',
+            link: 'https://github.com/Matag-e/dashboard_responsive'
+        },
+        {
+            titulo: 'Quiz React',
+            descricao: 'Aplicativo de perguntas e respostas interativo, desenvolvido com React. Permite que os usuários responderem perguntas de múltipla escolha, com feedback instantâneo e pontuação ao final.',
+            imagem: 'quiz.png',
+            link: 'https://github.com/Matag-e/quizreact'
+        },
+        {
+            titulo: 'rpaIngressos',
+            descricao: 'Automação simples para compra de ingressos, desenvolvida para facilitar o processo de aquisição de bilhetes.',
+            imagem: 'image.png',
+            link: 'https://github.com/Matag-e/rpaIngressos'
+        },
+        {
+            titulo: 'Todo List',
+            descricao: 'Aplicativo de lista de tarefas desenvolvido com React. Permite que os usuários adicionem, removam e marquem tarefas como concluídas.',
+            imagem: 'todo.png',
+            link: 'https://github.com/Matag-e/ToDoList_react'
+        },
+        {
+            titulo: 'Secret Word',
+            descricao: 'Jogo interativo onde os usuários tentam adivinhar a palavra secreta com base em dicas. Desenvolvido com JavaScript e HTML.',
+            imagem: 'secret.png',
+            link: 'https://github.com/Matag-e/secretWord'
+        },
+        {
+            titulo: 'Conta Bancaria',
+            descricao: 'Projeto simples de Node.js simulando um caixa eletrônico, utilizando as bibliotecas Inquirer e Chalk.',
+            imagem: 'accounts.png',
+            link: 'https://github.com/Matag-e/ACCOUNTS_NODE'
+        },
+        {
+            titulo: 'HttpReact',
+            descricao: 'Projeto simples que utiliza o hook useFetch do React para adicionar "itens" na pagina como se fosse um estoque.',
+            imagem: 'httpreact.png',
+            link: 'https://github.com/Matag-e/api_react'
+        }
+    ];
 }

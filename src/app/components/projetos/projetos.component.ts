@@ -1,84 +1,124 @@
 import { Component } from '@angular/core';
 
-interface Projeto {
-    titulo: string;
-    descricao: string;
-    imagem: string;
-    link: string;
-}
+
+
+
+
+
+
 
 @Component({
-    selector: 'app-projetos',
-    templateUrl: './projetos.component.html',
-    styleUrls: ['./projetos.component.css']
+  selector: 'app-projetos',
+  templateUrl: './projetos.component.html',
+  styleUrl: './projetos.component.css'
 })
 export class ProjetosComponent {
-    projetos: Projeto[] = [
-        {
-            titulo: 'Zoosuplementos',
-            descricao: 'Site de venda de suplementos desenvolvido com tecnologias de front-end (HTML, CSS, JavaScript, Bootstrap) e back-end (PHP, SQL, AJAX).',
-            imagem: 'zoosup.png',
-            link: 'https://github.com/Matag-e/ZOOSuplementos'
-        },
-        {
-            titulo: 'MINIBLOG',
-            descricao: 'Blog interativo que permite postar fotos com legendas, desenvolvido com React no front-end e Firebase no back-end.',
-            imagem: 'miniblog.png',
-            link: 'https://github.com/Matag-e/MiniBLOG'
-        },
-        {
-            titulo: 'DeltaService',
-            descricao: 'Site de uma loja, desenvolvido com HTML, CSS, JavaScript, Angular, TypeScript e Express. Oferece uma experiência de compra intuitiva e eficiente.',
-            imagem: 'delta.png',
-            link: 'https://github.com/projetosUninove/delta'
-        },
-        {
-            titulo: 'Movies Lib',
-            descricao: 'Site simples que consome a API do TMDB para exibir todos os filmes do banco de dados. Permite busca e filtragem de filmes por categoria.',
-            imagem: 'tmdb.png',
-            link: 'https://github.com/Matag-e/tmdb_api'
-        },
-        {
-            titulo: 'Dashboard Admin',
-            descricao: 'Site simples de dashboard admin, desenvolvido apenas com HTML e CSS.',
-            imagem: 'dashboard.png',
-            link: 'https://github.com/Matag-e/dashboard_responsive'
-        },
-        {
-            titulo: 'Quiz React',
-            descricao: 'Aplicativo de perguntas e respostas interativo, desenvolvido com React. Permite que os usuários responderem perguntas de múltipla escolha, com feedback instantâneo e pontuação ao final.',
-            imagem: 'quiz.png',
-            link: 'https://github.com/Matag-e/quizreact'
-        },
-        {
-            titulo: 'rpaIngressos',
-            descricao: 'Automação simples para compra de ingressos, desenvolvida para facilitar o processo de aquisição de bilhetes.',
-            imagem: 'image.png',
-            link: 'https://github.com/Matag-e/rpaIngressos'
-        },
-        {
-            titulo: 'Todo List',
-            descricao: 'Aplicativo de lista de tarefas desenvolvido com React. Permite que os usuários adicionem, removam e marquem tarefas como concluídas.',
-            imagem: 'todo.png',
-            link: 'https://github.com/Matag-e/ToDoList_react'
-        },
-        {
-            titulo: 'Secret Word',
-            descricao: 'Jogo interativo onde os usuários tentam adivinhar a palavra secreta com base em dicas. Desenvolvido com JavaScript e HTML.',
-            imagem: 'secret.png',
-            link: 'https://github.com/Matag-e/secretWord'
-        },
-        {
-            titulo: 'Conta Bancaria',
-            descricao: 'Projeto simples de Node.js simulando um caixa eletrônico, utilizando as bibliotecas Inquirer e Chalk.',
-            imagem: 'accounts.png',
-            link: 'https://github.com/Matag-e/ACCOUNTS_NODE'
-        },
-        {
-            titulo: 'HttpReact',
-            descricao: 'Projeto simples que utiliza o hook useFetch do React para adicionar "itens" na pagina como se fosse um estoque.',
-            imagem: 'httpreact.png',
-            link: 'https://github.com/Matag-e/api_react'
-        }
-    ];
+  projetos = [
+    {
+      titulo: 'Roteiro.io',
+      descricao: 'Aplicação completa para planejamento de viagens. Inclui roteiros diários, mapa interativo, controle financeiro, checklist de bagagem e exportação em PDF. Desenvolvido com MERN Stack e TypeScript.',
+      imagem: 'roteiro-cover.svg',
+      tech: ['MERN Stack', 'TypeScript'],
+      link: 'https://github.com/Matag-e/roteiro.io',
+      github: 'https://github.com/Matag-e/roteiro.io'
+    },
+    {
+      titulo: 'Community Mapper',
+      descricao: 'Plataforma de mapeamento colaborativo de problemas urbanos com geolocalização, dashboard administrativo e autenticação.',
+      imagem: 'community.png',
+      tech: ['FastAPI', 'Python', 'Leaflet', 'MongoDB'],
+      link: 'https://github.com/Matag-e/community-map',
+      github: 'https://github.com/Matag-e/community-map'
+    },
+    {
+      titulo: 'ReactGram',
+      descricao: 'Rede social completa inspirada no Instagram com compartilhamento de fotos, likes e comentários.',
+      imagem: 'reactgram.png',
+      tech: ['React', 'Node.js', 'MongoDB', 'Redux'],
+      link: 'https://react-gram-opal.vercel.app/',
+      github: 'https://github.com/Matag-e/React_Gram'
+    },
+    {
+      titulo: 'Mini Blog',
+      descricao: 'Um blog pessoal minimalista para compartilhar artigos e ideias.',
+      imagem: 'miniblog.png',
+      tech: ['Angular', 'TypeScript'],
+      link: 'https://github.com/Matag-e/MiniBLOG',
+      github: 'https://github.com/Matag-e/MiniBLOG'
+    },
+    {
+      titulo: 'TMDB Movies',
+      descricao: 'Catálogo de filmes utilizando a API do The Movie Database (TMDB).',
+      imagem: 'tmdb.png',
+      tech: ['Angular', 'API REST'],
+      link: 'https://github.com/Matag-e/tmdb_api',
+      github: 'https://github.com/Matag-e/tmdb_api'
+    },
+    {
+      titulo: 'Gerenciador de Tarefas',
+      descricao: 'Aplicação To-Do List para organização pessoal e produtividade.',
+      imagem: 'todo.png',
+      tech: ['TypeScript', 'Local Storage'],
+      link: 'https://github.com/Matag-e/ToDoList_react',
+      github: 'https://github.com/Matag-e/ToDoList_react'
+    },
+    {
+      titulo: 'Quiz App',
+      descricao: 'Jogo interativo de perguntas e respostas para testar conhecimentos.',
+      imagem: 'quiz.png',
+      tech: ['JavaScript', 'CSS'],
+      link: 'https://github.com/Matag-e/quizreact',
+      github: 'https://github.com/Matag-e/quizreact',
+      simpleBackground: true
+    },
+    {
+      titulo: 'Dashboard Financeiro',
+      descricao: 'Painel administrativo para visualização de métricas e dados.',
+      imagem: 'dashboard.png',
+      tech: ['Angular', 'Chart.js'],
+      link: 'https://github.com/Matag-e/responsive_adminDashboard',
+      github: 'https://github.com/Matag-e/responsive_adminDashboard'
+    },
+    {
+      titulo: 'ZooSup',
+      descricao: 'Plataforma de gestão para pet shops e clínicas veterinárias.',
+      imagem: 'zoosup.png',
+      tech: ['Full Stack', 'Node.js'],
+      link: 'https://github.com/Matag-e/ZOOSuplementos',
+      github: 'https://github.com/Matag-e/ZOOSuplementos'
+    },
+    {
+      titulo: 'Delta System',
+      descricao: 'Sistema corporativo para gerenciamento de processos internos.',
+      imagem: 'delta.png',
+      tech: ['Angular', 'Java'],
+      link: 'https://github.com/projetosUninove/delta',
+      github: 'https://github.com/projetosUninove/delta'
+    },
+    {
+      titulo: 'Secret Word',
+      descricao: 'Jogo de adivinhação de palavras inspirado em clássicos da TV.',
+      imagem: 'secret.png',
+      tech: ['React', 'CSS'],
+      link: 'https://github.com/Matag-e/SecretWord',
+      github: 'https://github.com/Matag-e/SecretWord',
+      simpleBackground: true
+    },
+    {
+      titulo: 'Accounts Node',
+      descricao: 'Simulador bancário via terminal (CLI) permitindo criar contas, depósitos, saques e consultas.',
+      imagem: 'accounts.png',
+      tech: ['Node.js', 'Inquirer', 'Chalk'],
+      link: 'https://github.com/Matag-e/ACCOUNTS_NODE',
+      github: 'https://github.com/Matag-e/ACCOUNTS_NODE'
+    },
+    {
+      titulo: 'FastAPI Chat',
+      descricao: 'Chat em tempo real com ChatBot inteligente (ELIZA), autenticação JWT, WebSockets e MongoDB.',
+      imagem: 'fastapi-chat.png',
+      tech: ['FastAPI', 'Python', 'MongoDB', 'WebSocket'],
+      link: 'https://github.com/Matag-e/fastapi-chat',
+      github: 'https://github.com/Matag-e/fastapi-chat'
+    }
+  ];
 }

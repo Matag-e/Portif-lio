@@ -1,5 +1,8 @@
-.contact-header {
-    margin-bottom: 4rem;
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
 .availability-badge {
@@ -31,126 +34,86 @@
     100% { transform: scale(1); opacity: 1; }
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.contact-info-side {
+    text-align: left;
 }
 
-.action-card {
-    position: relative;
+.contact-links-side {
     display: flex;
     flex-direction: column;
-    padding: 3rem 2rem;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
     background: rgba(26, 29, 35, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius);
     text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.action-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, var(--primary-color), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: -1;
-    filter: blur(40px);
-}
-
-.action-icon {
-    width: 56px;
-    height: 56px;
+.item-icon {
+    width: 48px;
+    height: 48px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-    transition: all 0.5s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.action-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-}
-
-.action-content p {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    margin-bottom: 2rem;
-}
-
-.action-link {
-    margin-top: auto;
-    font-weight: 600;
     color: var(--primary-color);
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    margin-right: 1.25rem;
     transition: all 0.3s ease;
 }
 
-.action-link::after {
-    content: '→';
-    transition: transform 0.3s ease;
+.item-text span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-bottom: 2px;
+}
+
+.item-text strong {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.item-arrow {
+    margin-left: auto;
+    font-size: 1.25rem;
+    color: var(--text-tertiary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
 }
 
 /* Hover States */
-.action-card:hover {
-    transform: translateY(-12px);
-    border-color: rgba(255, 255, 255, 0.15);
-    background: rgba(26, 29, 35, 0.6);
+.contact-item:hover {
+    transform: translateX(10px);
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
-.action-card:hover .action-glow {
-    opacity: 0.15;
-}
-
-.action-card:hover .action-icon {
+.contact-item:hover .item-icon {
     background: var(--primary-color);
     color: white;
-    transform: scale(1.1) rotate(8deg);
-    border-color: transparent;
 }
 
-.action-card:hover .action-link {
-    color: var(--text-color);
+.contact-item:hover .item-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--primary-color);
 }
 
-.action-card:hover .action-link::after {
-    transform: translateX(5px);
-}
-
-/* Specific Brands */
-.action-card.email:hover .action-glow { background: radial-gradient(circle, #ea4335, transparent 70%); }
-.action-card.email:hover .action-icon { background: #ea4335; }
-
-.action-card.linkedin:hover .action-glow { background: radial-gradient(circle, #0077b5, transparent 70%); }
-.action-card.linkedin:hover .action-icon { background: #0077b5; }
-
-.action-card.github:hover .action-glow { background: radial-gradient(circle, #ffffff, transparent 70%); }
-.action-card.github:hover .action-icon { background: #333; }
-
-@media (max-width: 768px) {
-    .contact-grid {
+@media (max-width: 992px) {
+    .contact-layout {
         grid-template-columns: 1fr;
-    }
-    
-    .action-card {
-        padding: 2.5rem 1.5rem;
+        gap: 3rem;
     }
 }
 

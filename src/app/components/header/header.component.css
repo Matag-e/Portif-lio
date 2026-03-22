@@ -5,10 +5,11 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease;
-  background: rgba(15, 17, 21, 0.8); /* Fundo semi-transparente */
-  backdrop-filter: blur(10px); /* Efeito de vidro */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(15, 17, 21, 0.7); /* Mais transparente para ressaltar o blur */
+  backdrop-filter: blur(12px) saturate(180%); /* Blur aprimorado com saturação */
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar {

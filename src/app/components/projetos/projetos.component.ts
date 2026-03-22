@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
-
-
-
-
-
-
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
   styleUrl: './projetos.component.css'
 })
-export class ProjetosComponent {
+export class ProjetosComponent implements OnInit {
+  filtroAtual: string = 'Todos';
+  isGridView: boolean = true;
+  projetosFiltrados: any[] = [];
+  tecnologias: string[] = [];
+
   projetos = [
+    {
+      titulo: 'Nova Custom',
+      descricao: 'Plataforma premium de e-commerce para camisas de futebol com personalização dinâmica. Inclui integração com Mercado Pago, autenticação via Supabase e painel administrativo completo.',
+      imagem: 'sccp.jpeg',
+      tech: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Tailwind CSS', 'Full Stack'],
+      link: 'https://github.com/Matag-e/n0vacustom',
+      github: 'https://github.com/Matag-e/n0vacustom'
+    },
     {
       titulo: 'Roteiro.io',
       descricao: 'Aplicação completa para planejamento de viagens. Inclui roteiros diários, mapa interativo, controle financeiro, checklist de bagagem e exportação em PDF. Desenvolvido com MERN Stack e TypeScript.',
@@ -121,4 +127,22 @@ export class ProjetosComponent {
       github: 'https://github.com/Matag-e/fastapi-chat'
     }
   ];
+
+  ngOnInit(): void {
+    this.tecnologias = ['Todos', 'Angular', 'React', 'Node.js', 'Python', 'Full Stack'];
+    this.filtrarProjetos('Todos');
+  }
+
+  extrairTecnologias() {
+    // Mantido para compatibilidade se necessário, mas não mais usado para gerar os botões
+  }
+
+  filtrarProjetos(tech: string) {
+    this.filtroAtual = tech;
+    if (tech === 'Todos') {
+      this.projetosFiltrados = this.projetos;
+    } else {
+      this.projetosFiltrados = this.projetos.filter(p => p.tech.includes(tech));
+    }
+  }
 }
